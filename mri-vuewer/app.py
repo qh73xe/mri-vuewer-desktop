@@ -2,8 +2,11 @@ import eel
 
 
 @eel.expose
-def hello_world():
-    return "Hello!!"
+def app_info():
+    return {
+        "name": "MRI-VUEWER-DESKTOP",
+        "version": 0.1,
+    }
 
 
 def onClose(page, sockets):
