@@ -1,0 +1,7 @@
+Eel==0.14.0
+peewee==3.14.8
+yapf==0.31.0
+pynvim==0.4.3
+flake8==4.0.1
+isort==5.9.3
+jedi==0.18.0
