@@ -14,4 +14,4 @@ def onClose(page, sockets):
 
 if __name__ == "__main__":
     eel.init('ui')
-    eel.start('index.html', close_callback=onClose)
+    eel.start('index.html', mode="chrome", close_callback=onClose)
