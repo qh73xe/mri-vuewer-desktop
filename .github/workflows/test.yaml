@@ -1,0 +1,12 @@
+name: 'UI Test for Deployment'
+on: push
+jobs:
+  jest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: yarn
+        working-directory: ui
+      - name: Run Jest
+        working-directory: ui
+        run: yarn test:unit
