@@ -20,13 +20,20 @@ const toParam = (str) => {
 };
 
 const toQuery = (param) => {
-  return [...new URLSearchParams(param).entries()].reduce((obj, e) => {
-    const val = e[1].indexOf(" ") > -1 ? e[1].split(" ") : e[1];
-    return {
-      ...obj,
-      [e[0]]: val ? val : true,
-    };
-  }, {});
+  return [...new URLSearchParams(param).entries()]
+    .filter((val) => {
+      if (val[1] === "undefined") {
+        return false;
+      }
+      return true;
+    })
+    .reduce((obj, e) => {
+      const val = e[1].indexOf(" ") > -1 ? e[1].split(" ") : e[1];
+      return {
+        ...obj,
+        [e[0]]: val ? val : true,
+      };
+    }, {});
 };
 
 export default {

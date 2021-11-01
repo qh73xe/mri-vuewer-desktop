@@ -56,7 +56,7 @@ export default {
     },
   },
   mounted: function () {
-    this.$store.action("FetchAppInfo");
+    this.$store.dispatch("fetchAppInfo");
   },
 };
 </script>

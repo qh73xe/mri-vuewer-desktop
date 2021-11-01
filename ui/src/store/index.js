@@ -27,9 +27,10 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    FetchAppInfo: (context) => {
+    fetchAppInfo: (context) => {
       if (EEL) {
         EEL.app_info()((val) => {
+          console.log(val);
           context.commit("name", val.name);
           context.commit("version", val.version);
         });
