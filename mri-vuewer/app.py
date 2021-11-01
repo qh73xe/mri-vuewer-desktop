@@ -1,13 +1,17 @@
 import eel
 
+
 @eel.expose
-def return_hello():
+def hello_world():
     return "Hello!!"
 
 
-def start_gui():
-    eel.init('web/dist')
-    eel.start('index.html')
+def onClose(page, sockets):
+    import sys
+    print(page + 'が閉じられました。プログラムを終了します。')
+    sys.exit()
+
 
 if __name__ == "__main__":
-    start_gui()
+    eel.init('ui')
+    eel.start('index.html', port=3331, close_callback=onClose)
